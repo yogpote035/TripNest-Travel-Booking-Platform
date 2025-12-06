@@ -14,8 +14,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await dispatch(loginUser(form));
-    navigate("/");
+    await dispatch(loginUser(form,navigate));
   };
 
   return (
@@ -23,7 +22,7 @@ const Login = () => {
       <div className="w-full max-w-md bg-white shadow-lg rounded-xl p-8">
 
         <h2 className="text-2xl font-bold text-center text-blue-600 mb-6">
-          Login to TripUp
+          Login to TripNest
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-5">

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../AllStateAndFeature/Authentication/AuthSlice";
+import { logoutUser } from "../../AllStateAndFeature/Authentication/AuthSlice";
 import {
   FaBars,
   FaTimes,
@@ -17,7 +17,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
 
   const handleLogout = () => {
-    dispatch(logout());
+    dispatch(logoutUser());
   };
 
   // detect active route (works for nested routes too)
@@ -55,20 +55,9 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-6">
           {user ? (
             <>
-              <Link
-                to="/profile"
-                className={`${
-                  isActive("/profile")
-                    ? "text-blue-600 font-semibold"
-                    : "text-gray-700 hover:text-blue-600"
-                }`}
-              >
-                Hi, {user.name?.split(" ")[0] || "User"}
-              </Link>
-
               <button
                 onClick={handleLogout}
-                className="flex items-center gap-2 text-red-600"
+                className="flex items-center gap-2 text-red-600 hover:text-white hover:bg-red-500 rounded-md px-2"
               >
                 <FaSignOutAlt /> Logout
               </button>

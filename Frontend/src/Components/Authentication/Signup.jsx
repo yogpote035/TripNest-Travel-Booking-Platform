@@ -19,8 +19,7 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await dispatch(signupUser(form));
-    navigate("/login");
+    await dispatch(signupUser(form, navigate));
   };
 
   return (

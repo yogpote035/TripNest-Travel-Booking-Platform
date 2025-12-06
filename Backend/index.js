@@ -8,11 +8,12 @@ const cors = require("cors");
 const ConnectToDatabase = require("./Database/ConnectToDB");
 ConnectToDatabase();
 app.use(cors());
-
+app.use(express.json())
 app.get("/", (req, res) => {
-    res.send("Hello");
+    res.send("Welcome on TripNest Check Route");
 })
 
+app.use("/api/auth", require("./Routes/AuthenticationRoutes/AuthenticationRoutes"))
 app.listen(Port, () => {
-    console.log("Server is Startted on Port: " + Port);
+    console.log("Server is Started on Port: " + Port);
 })

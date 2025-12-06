@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { toast } from "react-toastify";
+import Swal from "sweetalert2";
+import { toast } from "react-hot-toast";
 const initialState = {
   user: null,
   loading: false,
@@ -50,12 +51,12 @@ const AuthSlice = createSlice({
   },
 });
 
-export const { requestStart, requestSuccess, requestFailure } =
+export const { requestStart, requestSuccess, requestFailure, logout } =
   AuthSlice.actions;
 
 export default AuthSlice.reducer;
 
-export const loginUser = (payload) => async (dispatch) => {
+export const loginUser = (payload, navigate) => async (dispatch) => {
   const { email, password } = payload;
 
   try {
@@ -69,17 +70,21 @@ export const loginUser = (payload) => async (dispatch) => {
     );
 
     if (status == 200) {
-      toast.success(data?.message || "Login Successfull");
-      console.log(data);
+      toast.success(data?.message || "Login Successful");
+      navigate("/");
       return dispatch(requestSuccess(data));
     }
   } catch (error) {
     const status = error?.response?.status;
     const message = error?.response?.data?.message;
-    console.log(error);
 
     if (status === 404) {
       toast.error(message || "User not found, please check your credentials");
+      return dispatch(requestFailure(message));
+    }
+
+    if (status === 400) {
+      toast.error(message || "All fields are required");
       return dispatch(requestFailure(message));
     }
 
@@ -93,7 +98,7 @@ export const loginUser = (payload) => async (dispatch) => {
     return dispatch(requestFailure(message));
   }
 };
-export const signupUser = (payload) => async (dispatch) => {
+export const signupUser = (payload, navigate) => async (dispatch) => {
   const { mobile, name, email, password } = payload;
 
   try {
@@ -106,11 +111,11 @@ export const signupUser = (payload) => async (dispatch) => {
 
     // success only
     toast.success(res.data?.message || "Signup successful");
+    navigate("/");
     return dispatch(requestSuccess(res.data));
   } catch (error) {
     const status = error?.response?.status;
     const message = error?.response?.data?.message;
-    console.log(error);
 
     if (status === 409) {
       toast.error(message || "User already exists");
@@ -127,6 +132,23 @@ export const signupUser = (payload) => async (dispatch) => {
     return dispatch(requestFailure(message));
   }
 };
-export const logout = () => (dispatch) => {
-  dispatch(logout());
+export const logoutUser = () => (dispatch) => {
+  Swal.fire({
+    title: "Your Going to logged out",
+    icon: "warning",
+    showCancelButton: true,
+    cancelButtonColor: "#d33",
+    showConfirmButton: true,
+    confirmButtonColor: "#3085d6",
+    confirmButtonText: "yes, Logged out",
+  }).then((res) => {
+    if (res.isConfirmed) {
+      Swal.fire({
+        title: "You Logged Out",
+        icon: "success",
+      });
+      dispatch(logout());
+      toast.error("You Logged Out");
+    }
+  });
 };

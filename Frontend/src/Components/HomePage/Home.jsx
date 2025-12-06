@@ -8,7 +8,7 @@ const Home = () => {
       {/* HERO SECTION */}
       <section className="relative bg-blue-600 text-white py-24 px-6 text-center">
         <h1 className="text-4xl font-bold mb-4">
-          Your Journey Starts With <span className="text-yellow-300">TripUp</span>
+          Your Journey Starts With <span className="text-yellow-300">TripNest</span>
         </h1>
         <p className="text-lg opacity-90 mb-6">
           Book flights, trains, buses, and hotels at the best prices.
