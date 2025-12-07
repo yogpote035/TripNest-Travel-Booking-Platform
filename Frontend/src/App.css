@@ -1,0 +1,19 @@
+.homePage {
+  background-image: url("homePage.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.login {
+  background-image: url("login.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.signup {
+  background-image: url("signup.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

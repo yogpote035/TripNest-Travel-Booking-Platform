@@ -18,10 +18,10 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-50 p-4">
-      <div className="w-full max-w-md bg-white shadow-lg rounded-xl p-8">
+    <div className="flex items-center justify-center min-h-screen bg-gray-50 p-4 login">
+      <div className="w-full max-w-md  shadow-lg rounded-xl p-8 bg-transparent backdrop-blur-sm border border-white">
 
-        <h2 className="text-2xl font-bold text-center text-blue-600 mb-6">
+        <h2 className="text-2xl font-bold text-center text-white mb-6">
           Login to TripNest
         </h2>
 
@@ -39,7 +39,7 @@ const Login = () => {
                 value={form.email}
                 onChange={handleChange}
                 required
-                className="w-full px-2 py-2 outline-none"
+                className="w-full px-2 py-2 outline-none bg-transparent backdrop-blur-sm"
               />
             </div>
           </div>
@@ -56,7 +56,7 @@ const Login = () => {
                 value={form.password}
                 onChange={handleChange}
                 required
-                className="w-full px-2 py-2 outline-none"
+                className="w-full px-2 py-2 outline-none bg-transparent backdrop-blur-sm"
               />
             </div>
           </div>
@@ -71,7 +71,7 @@ const Login = () => {
         </form>
 
         {/* Bottom text */}
-        <p className="text-center text-sm mt-6">
+        <p className="text-center text-white text-sm mt-6">
           Don't have an account?{" "}
           <Link to="/signup" className="text-blue-600 font-medium">
             Sign up

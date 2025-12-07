@@ -9,6 +9,7 @@ const ConnectToDatabase = require("./Database/ConnectToDB");
 ConnectToDatabase();
 app.use(cors());
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
     res.send("Welcome on TripNest Check Route");
 })

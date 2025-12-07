@@ -23,9 +23,9 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-50 mt-10 p-4">
-      <div className="w-full max-w-md bg-white shadow-lg rounded-xl p-8">
-        <h2 className="text-2xl font-bold text-center text-blue-600 mb-6">
+    <div className="flex items-center justify-center min-h-screen mt-10 px-0 py-8 signup">
+      <div className="w-full max-w-md bg-transparent backdrop-blur-sm border-red-50 border-1 shadow-lg rounded-xl p-8">
+        <h2 className="text-2xl font-bold text-center text-white mb-6">
           Create an Account
         </h2>
 
@@ -42,7 +42,7 @@ const Signup = () => {
                 value={form.name}
                 onChange={handleChange}
                 required
-                className="w-full px-2 py-2 outline-none"
+                className="w-full px-2 py-2 outline-none bg-transparent backdrop-blur-sm"
               />
             </div>
           </div>
@@ -59,7 +59,7 @@ const Signup = () => {
                 value={form.email}
                 onChange={handleChange}
                 required
-                className="w-full px-2 py-2 outline-none"
+                className="w-full px-2 py-2 outline-none bg-transparent backdrop-blur-sm"
               />
             </div>
           </div>
@@ -74,7 +74,7 @@ const Signup = () => {
                 value={form.mobile}
                 onChange={handleChange}
                 required
-                className="w-full px-2 py-2 outline-none"
+                className="w-full px-2 py-2 outline-none bg-transparent backdrop-blur-sm"
               />
             </div>
           </div>

@@ -1,6 +1,7 @@
 import "./App.css";
 import { Toaster } from "react-hot-toast";
 import Navbar from "./General/Navbar";
+import Footer from "./General/Footer";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Components/HomePage/Home";
 import Login from "./Components/Authentication/Login";
@@ -17,12 +18,12 @@ function App() {
       />
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <h1>Hello</h1>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
+        <Footer />
       </div>
     </>
   );

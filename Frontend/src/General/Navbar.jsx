@@ -29,9 +29,9 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <img
-            src="https://dynamic.design.com/preview/logodraft/40da2918-ef1b-4356-bcae-515687ea197d/image/large.png"
+            src="logo.jpg"
             alt="TripNest"
-            className="h-10"
+            className="h-10 bg-transparent"
           />
         </Link>
 

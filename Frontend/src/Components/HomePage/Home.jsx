@@ -6,7 +6,7 @@ const Home = () => {
     <div className="mt-20">
 
       {/* HERO SECTION */}
-      <section className="relative bg-blue-600 text-white py-24 px-6 text-center">
+      <section className="relative text-white py-39 px-6 text-center homePage">
         <h1 className="text-4xl font-bold mb-4">
           Your Journey Starts With <span className="text-yellow-300">TripNest</span>
         </h1>
@@ -103,11 +103,11 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* FOOTER */}
+{/* 
+      FOOTER
       <footer className="bg-black text-gray-300 py-6 text-center text-sm">
         © {new Date().getFullYear()} TripUp. All rights reserved.
-      </footer>
+      </footer> */}
     </div>
   );
 };
