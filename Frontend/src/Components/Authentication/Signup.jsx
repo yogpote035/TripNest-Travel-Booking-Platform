@@ -24,7 +24,7 @@ const Signup = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen mt-10 px-0 py-8 signup">
-      <div className="w-full max-w-md bg-transparent backdrop-blur-sm border-red-50 border-1 shadow-lg rounded-xl p-8">
+      <div className="w-full max-w-md bg-transparent backdrop-blur-sm border-red-50 border shadow-lg rounded-xl p-8">
         <h2 className="text-2xl font-bold text-center text-white mb-6">
           Create an Account
         </h2>
