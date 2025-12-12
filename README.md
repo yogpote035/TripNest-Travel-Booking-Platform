@@ -1,2 +1,3 @@
 # TripNest-Travel-Booking-Platform
-a TripUp-inspired travel booking platform clone, but redesigned as your own flagship MERN project.
+TripNest is a full-featured travel web app built using the MERN stack. It combines Train, Flight, and Bus Booking System
+
